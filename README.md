@@ -33,12 +33,14 @@ it
 ## Usage
 View the GIF below to see our app in action:
 
-![Visual alt description](Path to visual here)
+![Home Search](./assets/home-recipeze.png)
+![Saved Recipes](./assets/saved-recipeze.png)
+![Login](./assets/login-recipeze.png)
 
-Please click [here](link to video demo here) for a video demo.
+Please click [Demo Video](https://drive.google.com/file/d/1do6SHVYv9TQIkRQddpLj2Z9_v6FcCQZd/view?usp=sharing) for a video demo.
 
 ## Link
-Visit the deployed site at: (https://kara-heeb-recipeze.herokuapp.com/)
+Visit the deployed site [here](https://aqueous-beach-92055.herokuapp.com)
 
 ## Collaborators
 Andrew Yoo - GitHub: [andrewbyoo](https://github.com/andrewbyoo)
@@ -58,8 +60,13 @@ This application is covered under the MIT license.
 - GraphQL with Node.js and Express.js server
 - MongoDB and Mongoose ODM for the database
 
+## How to Contribute
+
+https://github.com/Rayman244/recipeze
+
 ## Tests
 Coming soon!
 
 ## Questions
-To reach out with questions via email or to view more of our projects, visit our GitHub profile pages listed within the [Collaborators](#collaborators) section.
+message me on Github https://github.com/Rayman244/
+ email me at [rayhewitt42@icloud.com](mailto:rayhewitt42@icloud.com)

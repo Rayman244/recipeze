@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Button, Form, Alert } from "react-bootstrap";
 import Auth from '../../utils/auth';
 
-
+import "./styles.css"
 
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../../utils/mutations';
@@ -42,36 +42,6 @@ function LogIn() {
   };
   return (
 <>
-<style type="text/css">
-    {`
-
-    
-    
-    .btn-flat {
-      background-color: #598787;
-      
-    }
-
-    .btn-xxl {
-      padding: 1rem 1.5rem;
-      font-size: 1.5rem;
-      border-radius: 50px;
-      color: #f1d261;
-      border-color: #f1d261; 
-      border-width: 5px;
-    }
-    .custom-label {
-      font-family: 'Catamaran', sans-serif;
-      padding: 1.2rem;
-      font-weight: bold;
-      letter-spacing: 0.6rem;
-      font-size: 1.2rem;
-      border-top: 3px solid #f1d261;
-      border-bottom: 3px solid #f1d261;
-      border-width: 10px;
-    }
-    `}
-  </style>
 {data ? (
       <p>
         Success! You may now head back to the homepage.

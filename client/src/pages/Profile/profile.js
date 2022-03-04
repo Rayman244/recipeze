@@ -1,15 +1,15 @@
 import React from "react";
 // import ProfileFavorites from "../components/ProfileFavorites";
 // import ProfileWeek from "../components/ProfileWeek";
-import Auth from "../utils/auth";
+import Auth from "../../utils/auth";
 import { useQuery } from '@apollo/client';
 import { Container } from 'react-bootstrap';
-import { removeRecipeId } from '../utils/localStorage';
-import SavedRecipeCards from "../components/RecipeCards/index2";
-import { REMOVE_RECIPE } from '../utils/mutations';
-import{GET_ME} from '../utils/queries'
+import { removeRecipeId } from '../../utils/localStorage';
+import SavedRecipeCards from "../../components/RecipeCards/index2";
+import { REMOVE_RECIPE } from '../../utils/mutations';
+import{GET_ME} from '../../utils/queries'
 import { useMutation } from '@apollo/client';
-
+import './styles.css'
 const SavedRecipes = () => {
   const {loading,data} = useQuery(GET_ME);
   const [removeRecipe] = useMutation(REMOVE_RECIPE);
@@ -47,36 +47,7 @@ const SavedRecipes = () => {
   return (
     <>
     <style type="text/css">
-    {`
-
-    body {
-      background: radial-gradient(#334e43, #cee4ce); 
-    }
     
-    
-
-    h2 {
-      font-family: 'Catamaran', sans-serif;
-      padding: 1.2rem;
-      font-weight: bold;
-      letter-spacing: 0.6rem;
-      font-size: 1.2rem;
-      border-top: 3px solid #f1d261;
-      border-bottom: 3px solid #f1d261;
-      border-width: 10px;
-    }
-
-    
-
-    .card-body-custom {
-      background: linear-gradient(to bottom, #95a687, #cee4ce)
-      
-    }
-
-    .card-footer {
-      background-color: #f1d261;
-    }
-    `}
   </style>
   <div>
       <Container>

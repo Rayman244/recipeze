@@ -1,30 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import { Button, Form, FormControl, Container, Row, Col } from "react-bootstrap";
-import RecipeCards from "../components/RecipeCards";
-import Auth from "../utils/auth";
-import { searchRecipes } from "../utils/api";
-import { saveRecipeIds, getSavedRecipeIds } from "../utils/localStorage";
+import RecipeCards from "../../components/RecipeCards";
+import Auth from "../../utils/auth";
+import { searchRecipes } from "../../utils/api";
+// import { saveRecipeIds, getSavedRecipeIds } from "../../utils/localStorage";
 import { v4 as uuidv4 } from "uuid";
 import { useMutation } from '@apollo/client';
+import './styles.css'
 
-
-
-import { SAVE_RECIPE } from "../utils/mutations";
+import { SAVE_RECIPE } from "../../utils/mutations";
 const SearchRecipes = () => {
   const [addSavedRecipe] = useMutation(SAVE_RECIPE);
   // create state for holding returned google api data
   const [searchedRecipes, setSearchedRecipes] = useState([]);
   // create state for holding our search field data
   const [searchInput, setSearchInput] = useState("");
-
-  // create state to hold saved RecipeId values
-  const [savedRecipeIds] = useState(getSavedRecipeIds());
-
-  // set up useEffect hook to save `savedRecipeIds` list to localStorage on component unmount
-  // learn more here: https://reactjs.org/docs/hooks-effect.html#effects-with-cleanup
-  useEffect(() => {
-    return () => saveRecipeIds(savedRecipeIds);
-  });
 
   // create method to search for Recipes and set state on form submit
   const handleFormSubmit = async (event) => {
@@ -87,42 +77,7 @@ const SearchRecipes = () => {
 
   return (
     <div>
-    <>
-    <style type="text/css">
-                    {`
-
-    body {
-      background: radial-gradient(#334e43, #cee4ce); 
-    }
-    
-    .btn-flat {
-      background-color: #598787;
-      
-    }
-
-    .btn-xxl {
-      padding: 1rem 1.rem;
-      font-size: 1.5rem;
-      border-radius: 50px;
-      color: #f1d261;
-      border-color: #f1d261; 
-      border-width: 3px;
-      font-family: 'Caveat', cursive;
-    }
-
-    .form-control {
-      background-color:
-      width: 75%;
-      border-bottom: 3px solid #95a687;
-      border-top: 3px solid #95a687;
-    }
-
-    .custom-border {
-      border-bottom: 4px solid #f1d261;
-    }
-    `}
-      </style>
-      
+    <>      
       <div className="col d-flex justify-content-center text-center custom-border">
       <Form className="d-flex justify-content-center w-75 mb-1" onSubmit={handleFormSubmit}>
         <FormControl

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import SignUp from '../SignUp'
 import LogIn from '../Login'
 import recipeZeLogo from '../../assets/recipeZe-logo.png';
-
+import './styles.css'
 import Auth from "../../utils/auth";
 
 function NavBar() {
@@ -15,15 +15,6 @@ function NavBar() {
   return (
     <div className="NavBar mb-2">
     <>
-      <style type="text/css">
-    {`
-    .navbar-custom {
-      background: linear-gradient(to left, #cee4ce, #f1d261);
-      border-bottom: 5px solid #95a687;
-    }
-
-    `}
-  </style>
         <Navbar expand="lg" className="navbar-custom">
           <Container fluid>
             <Navbar.Brand href="/">

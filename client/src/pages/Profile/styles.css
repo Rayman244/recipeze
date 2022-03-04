@@ -1,0 +1,28 @@
+
+    body {
+        background: radial-gradient(#334e43, #cee4ce); 
+      }
+      
+      
+  
+      h2 {
+        font-family: 'Catamaran', sans-serif;
+        padding: 1.2rem;
+        font-weight: bold;
+        letter-spacing: 0.6rem;
+        font-size: 1.2rem;
+        border-top: 3px solid #f1d261;
+        border-bottom: 3px solid #f1d261;
+        border-width: 10px;
+      }
+  
+      
+  
+      .card-body-custom {
+        background: linear-gradient(to bottom, #95a687, #cee4ce)
+        
+      }
+  
+      .card-footer {
+        background-color: #f1d261;
+    }

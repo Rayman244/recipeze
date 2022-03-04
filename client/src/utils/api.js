@@ -65,5 +65,6 @@ export const searchRecipes = async (query) => {
   }
 
   const data = await response.json();
+  
   return data;
 };

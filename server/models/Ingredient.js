@@ -1,12 +1,12 @@
 const {Schema} = require('mongoose')
 
 const ingredientSchema = new Schema({
-    text:{
+    food:{
         type: String,
         required:true
     },
-    quantity:Number,
-    measure:String,
+    // quantity:Number,
+    // measure:String,
 })
 
 module.exports = ingredientSchema

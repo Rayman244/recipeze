@@ -56,15 +56,13 @@ const SavedRecipes = () => {
             ? `You have ${userData.savedRecipes.length} saved ${userData.savedRecipes.length === 1 ? 'recipe' : 'recipes'}:`
             : 'You have no saved recipes!'}
         </h2>
-        <div>
+        <div className='d-flex flex-wrap justify-content-around'>
           {userData.savedRecipes.map((recipe) => {
+            console.log(recipe);
             return (
               <SavedRecipeCards
                 key={recipe.recipeId}
-                recipeId={recipe.recipeId}
-                recipeName={recipe.label}
-                recipeLink={recipe.url}
-                photoLink={recipe.image}
+                recipe={recipe}
                 handleDelete={handleDeleteRecipe}
               />
             );

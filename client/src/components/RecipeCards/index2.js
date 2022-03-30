@@ -2,7 +2,7 @@
 import { Card, Button } from 'react-bootstrap';
 import './styles.css'
 export default function savedRecipeCard({ recipe, handleDelete }) {
-  const {recipeId,label, url, image,} = recipe
+  const {recipeId,label, url, image,dietLabels,mealType,} = recipe
   console.log(recipe)
   const qt = recipe.cuisineType[0].charAt(0).toUpperCase() + recipe.cuisineType[0].slice(1)
   // let cuisine = 
@@ -18,8 +18,8 @@ export default function savedRecipeCard({ recipe, handleDelete }) {
       <Card.Body >
         <div className='d-flex justify-content-around'>
            <p>{qt}</p>
-        <p>{recipe.dietLabels}</p>
-        <p>{recipe.mealType}</p>
+        <p>{dietLabels}</p>
+        <p>{mealType}</p>
         <p>Yield: {recipe.yield}</p>
         </div>
      

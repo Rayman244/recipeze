@@ -1,5 +1,5 @@
 import React, { useState} from "react";
-import { Button, Form, FormControl } from "react-bootstrap";
+import { Button, Form, FormControl, Container, Row, Col } from "react-bootstrap";
 import RecipeCards from "../../components/RecipeCards";
 import Auth from "../../utils/auth";
 import { searchRecipes } from "../../utils/api";
@@ -30,19 +30,9 @@ const SearchRecipes = () => {
 
       const recipeData = data.map(({ recipe }) => ({
         recipeId: uuidv4(),
-        label: recipe.label,
-        url: recipe.url,
-        image: recipe.image,
-        yield:recipe.yield,
-        dietLabels:recipe.dietLabels,
-        healthLabels:recipe.healthLabels,
-        cautions:recipe.cautions,
-        ingredients:recipe.ingredients,
-        // calories:recipe.calories,
-        cuisineType:recipe.cuisineType,
-        mealType:recipe.mealType,
-        dishType:recipe.dishType,
-
+        recipeName: recipe.label,
+        recipeLink: recipe.url,
+        photoLink: recipe.image,
       }));
 
       setSearchedRecipes(recipeData);
@@ -53,21 +43,12 @@ const SearchRecipes = () => {
   };
 
   // create function to handle saving a recipe to our database
-  const handleSaveRecipe = async (recipe) => {
+  const handleSaveRecipe = async (recipeId, recipeName, photoLink, recipeLink) => {
     const recipeToSave = {
-      recipeId:recipe.recipeId,
-      label: recipe.label,
-      url: recipe.url,
-      image: recipe.image,
-      yield:recipe.yield,
-      dietLabels:recipe.dietLabels,
-      healthLabels:recipe.healthLabels,
-      cautions:recipe.cautions,
-      ingredients:recipe.ingredients,
-      calories:recipe.calories,
-      cuisineType:recipe.cuisineType,
-      mealType:recipe.mealType,
-      dishType:recipe.dishType,
+      recipeId,
+      label: recipeName,
+      image: photoLink,
+      url: recipeLink
     }
     // get token
     const token = Auth.loggedIn() ? Auth.getToken() : null;
@@ -112,20 +93,24 @@ const SearchRecipes = () => {
         </Button>
       </Form>
       </div>
-      <div className="mt-3 d-flex flex-wrap justify-content-around">
+      <div className="mt-3 justify-content-center text-center">
       {searchedRecipes.map(data => {
-        // console.log({data})
         return (
-         
-  <RecipeCards
+          <Container fluid="md">
+  <Row>
+    <Col><RecipeCards
           key={data.recipeId}
-          recipe={data}
+          recipeId={data.recipeId}
+          recipeName={data.recipeName}
+          recipeLink={data.recipeLink}
+          photoLink={data.photoLink}
           loggedIn={Auth.loggedIn()}
           handleSave={handleSaveRecipe}
-        />
+        /></Col>
+  </Row>
+</Container>
         
-      )
-})}
+      )})}
       </div>
       
       </>

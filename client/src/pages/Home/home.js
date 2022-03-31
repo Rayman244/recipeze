@@ -1,5 +1,5 @@
 import React, { useState} from "react";
-import { Button, Form, FormControl } from "react-bootstrap";
+import { Button, Form, FormControl} from "react-bootstrap";
 import RecipeCards from "../../components/RecipeCards";
 import Auth from "../../utils/auth";
 import { searchRecipes } from "../../utils/api";
@@ -42,7 +42,6 @@ const SearchRecipes = () => {
         cuisineType:recipe.cuisineType,
         mealType:recipe.mealType,
         dishType:recipe.dishType,
-
       }));
 
       setSearchedRecipes(recipeData);
@@ -63,12 +62,13 @@ const SearchRecipes = () => {
       dietLabels:recipe.dietLabels,
       healthLabels:recipe.healthLabels,
       cautions:recipe.cautions,
-      ingredients:recipe.ingredients,
-      calories:recipe.calories,
+      // ingredients:recipe.ingredients,
+      calories:`${recipe.calories}`,
       cuisineType:recipe.cuisineType,
       mealType:recipe.mealType,
       dishType:recipe.dishType,
     }
+    console.log(recipe);
     // get token
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
@@ -114,18 +114,16 @@ const SearchRecipes = () => {
       </div>
       <div className="mt-3 d-flex flex-wrap justify-content-around">
       {searchedRecipes.map(data => {
-        // console.log({data})
         return (
-         
+  
   <RecipeCards
           key={data.recipeId}
-          recipe={data}
           loggedIn={Auth.loggedIn()}
           handleSave={handleSaveRecipe}
+          recipe={data}
         />
         
-      )
-})}
+      )})}
       </div>
       
       </>

@@ -1,3 +1,12 @@
+body {
+    background: radial-gradient(#334e43, #cee4ce); 
+  }
+  
+  .btn-flat {
+    background-color: #598787;
+    
+  }
+
   .btn-xxl {
     padding: 1rem 1.3rem;
     font-size: 1.5rem;

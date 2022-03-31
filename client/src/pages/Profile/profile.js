@@ -3,7 +3,6 @@ import React from "react";
 // import ProfileWeek from "../components/ProfileWeek";
 import Auth from "../../utils/auth";
 import { useQuery } from '@apollo/client';
-import { Container } from 'react-bootstrap';
 import { removeRecipeId } from '../../utils/localStorage';
 import SavedRecipeCards from "../../components/RecipeCards/index2";
 import { REMOVE_RECIPE } from '../../utils/mutations';
@@ -13,7 +12,7 @@ import './styles.css'
 const SavedRecipes = () => {
   const {loading,data} = useQuery(GET_ME);
   const [removeRecipe] = useMutation(REMOVE_RECIPE);
-
+console.log(data);
   const userData = data?.me || [];
   const handleDeleteRecipe = async (recipeId) => {
 
@@ -46,30 +45,25 @@ const SavedRecipes = () => {
 
   return (
     <>
-    <style type="text/css">
-    
-  </style>
+  
   <div>
-      <Container>
-        <h2 className="text-center" style={{}}>
-          {userData.savedRecipes.length
+        <h2 className="text-center">
+          {userData.savedRecipes?.length
             ? `You have ${userData.savedRecipes.length} saved ${userData.savedRecipes.length === 1 ? 'recipe' : 'recipes'}:`
             : 'You have no saved recipes!'}
         </h2>
-        <div className='d-flex flex-wrap justify-content-around'>
-          {userData.savedRecipes.map((recipe) => {
-            console.log(recipe);
+        <div className="d-flex flex-wrap">
+          {userData.savedRecipes?.map((recipe) => {
             return (
               <SavedRecipeCards
                 key={recipe.recipeId}
-                recipe={recipe}
                 handleDelete={handleDeleteRecipe}
+                recipe={recipe}
               />
             );
           })}
         </div>
-        
-      </Container>
+     
       {/* <ProfileFavorites onDeleteRecipe={handleDeleteRecipe} />
       <ProfileWeek /> */}
     </div>

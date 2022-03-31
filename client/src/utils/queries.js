@@ -14,13 +14,13 @@ export const GET_ME = gql`
         url
         yield
         dietLabels
-        # healthLabel
+        healthLabels
         cautions
         calories
         cuisineType
         mealType
         dishType
-        days
+        # days
         # ingredients{
         #   text
         #   quantity

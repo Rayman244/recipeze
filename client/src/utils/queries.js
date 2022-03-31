@@ -10,16 +10,16 @@ export const GET_ME = gql`
         label
         image
         recipeId
-        # source
+        source
         url
-        # yield
-        # dietLabels
-        # healthLabel
-        # cautions
-        # calories
-        # cuisineType
-        # mealType
-        # dishType
+        yield
+        dietLabels
+        healthLabels
+        cautions
+        calories
+        cuisineType
+        mealType
+        dishType
         # days
         # ingredients{
         #   text

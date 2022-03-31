@@ -38,3 +38,7 @@ body {
   .card-footer {
     background-color: #f1d261;
   }
+  .recipeCard{
+    width: 20rem;
+    text-align: center;
+  }

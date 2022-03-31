@@ -12,18 +12,18 @@ const typeDefs = gql`
     label: String!
     image: String
     recipeId: String!
-    # source:String
+    source:String
     url: String
-    # yield:Int
-    # dietLabels:[String]
-    # healthLabel:[String]
-    # cautions:[String]
+    yield:Int
+    dietLabels:[String]
+    healthLabels:[String]
+    cautions:[String]
     # ingredients:[Ingredient]
-    # calories:Int
-    # cuisineType:[String]
-    # mealType:[String]
-    # dishType:[String]
-    # days:[String]
+    calories:String
+    cuisineType:[String]
+    mealType:[String]
+    dishType:[String]
+    days:[String]
   }
   # type Ingredient{
   #   text:String!
@@ -40,18 +40,18 @@ const typeDefs = gql`
     label: String!
     image: String
     recipeId: String!
-    # source:String
+    source:String
     url: String
-    # yield:Int
-    # dietLabels:[String]
-    # healthLabel:[String]
-    # cautions:[String]
+    yield:Int
+    dietLabels:[String]
+    healthLabels:[String]
+    cautions:[String]
     # ingredients:[Ingredient]
-    # calories:Int
-    # cuisineType:[String]
-    # mealType:[String]
-    # dishType:[String]
-    # days:[String]
+    calories:String
+    cuisineType:[String]
+    mealType:[String]
+    dishType:[String]
+    days:[String]
   }
 
   # input IngredientInput{

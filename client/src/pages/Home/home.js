@@ -114,6 +114,7 @@ const SearchRecipes = () => {
       </div>
       <div className="mt-3 d-flex flex-wrap justify-content-around">
       {searchedRecipes.map(data => {
+        console.log(data);
         return (
   
   <RecipeCards

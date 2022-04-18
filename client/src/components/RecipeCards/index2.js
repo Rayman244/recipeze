@@ -8,7 +8,7 @@ export default function savedRecipeCard({handleDelete,recipe}) {
     url,
     image,
   } = recipe
-console.log(recipe)
+console.log(recipe);
   return (
     <>
       <div className="mt-3 col d-flex justify-content-center text-center">

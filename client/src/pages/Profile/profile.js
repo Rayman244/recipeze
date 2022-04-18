@@ -9,13 +9,12 @@ import { REMOVE_RECIPE } from '../../utils/mutations';
 import{GET_ME} from '../../utils/queries'
 import { useMutation } from '@apollo/client';
 import './styles.css'
+import { idSearch } from "../../utils/api";
 const SavedRecipes = () => {
   const {loading,data} = useQuery(GET_ME);
   const [removeRecipe] = useMutation(REMOVE_RECIPE);
-console.log(data);
   const userData = data?.me || [];
   const handleDeleteRecipe = async (recipeId) => {
-
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
     if (!token) {

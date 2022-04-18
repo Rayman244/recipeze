@@ -68,3 +68,18 @@ export const searchRecipes = async (query) => {
   
   return data;
 };
+
+export const idSearch = async (id)=> {
+  const API_KEY = process.env.REACT_APP_API_KEY;
+  const API_ID = process.env.REACT_APP_API_ID;
+
+  const response = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&id=${id}&app_id=${API_ID}&app_key=${API_KEY}`);
+
+  if (!response.ok) {
+    throw new Error("something went wrong!");
+  }
+
+  const data = await response.json();
+  
+  return data;
+}

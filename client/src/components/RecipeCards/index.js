@@ -20,7 +20,7 @@ export default function recipeCard({
     
     const IngPopOver = () => (
       <OverlayTrigger placement="top" overlay={popover}>
-        <Button size="xxl">Ingredients</Button>
+        <p size="xxl">Ingredients</p>
       </OverlayTrigger>
     );
 
